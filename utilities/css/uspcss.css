@@ -135,26 +135,28 @@
 	}
 	.roller-strip-1{
 		background-repeat: repeat-x;
-		width: 100%;
+		width: 200%;
 		height: 200px;
 		background-image: url(../../images/image-roller1.jpg);
 	}
 	.roller-strip-2{
 		background-repeat: repeat-x;
-		width: 100%;
+		width: 200%;
 		height: 200px;
+		margin-left: -100%;
 		background-image: url(../../images/image-roller2.jpg);
 	}
 	.roller-strip-3{
 		background-repeat: repeat-x;
-		width: 100%;
+		width: 200%;
 		height: 200px;
 		background-image: url(../../images/image-roller3.jpg);
 	}
 	.roller-strip-4{
 		background-repeat: repeat-x;
-		width: 100%;
+		width: 200%;
 		height: 200px;
+		margin-left: -100%;
 		background-image: url(../../images/image-roller4.jpg);
 	}
 	.title-level-text{
@@ -196,7 +198,7 @@
 
 	.main-about-content{
 		position: absolute;
-		bottom: 10%;
+		bottom: 15%;
 	}
 	.background-cover{
 		background-image: url('../../images/summer-flop-compressed.jpg');
