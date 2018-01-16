@@ -1,0 +1,2 @@
+resizeFunctions.functions.initialActions();
+checkForLogin();
