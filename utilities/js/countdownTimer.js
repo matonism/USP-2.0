@@ -11,7 +11,7 @@ var countdownTimer = (function(countdownTimer){
         $(document).ready(function(){
 
             // set the date we're counting down to
-            var targetDate = new Date('July, 8, 2017').getTime();
+            var targetDate = new Date('July, 14, 2018').getTime();
 
             // variables for time units
             var days, hours, minutes, seconds;
