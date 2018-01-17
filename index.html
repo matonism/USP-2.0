@@ -296,6 +296,7 @@
 
 			var rollers = $(".roller-strip");
 			setRollerHeight(rollers);
+			setVideoPlacement();
 			showAllRollersInSuccession(rollers, 0);
 
 		}
@@ -306,7 +307,7 @@
 			var rollerIndex = 0;
 
 			for(var i = 0; i < rollers.length; i++){
-				var targetRollerHeight = (windowHeight + 50) / rollers.length;
+				var targetRollerHeight = (windowHeight + 20) / rollers.length;
 
 				var url = $(rollers[i]).css('background-image');
 				url = url.replace('url(', '');
@@ -323,6 +324,17 @@
 				$(rollers[i]).css("height", targetRollerHeight);
 
 			}
+
+		}
+
+		function setVideoPlacement(){
+			var contentHeight = $(".main-about-content").css("height");
+			var windowHeight = window.outerHeight;
+
+			contentHeight = parseInt(contentHeight.replace('px'));
+
+			var distanceFromTop = (windowHeight/2) - (contentHeight/2);
+			$(".main-about-content").css("top", distanceFromTop);
 
 		}
 
