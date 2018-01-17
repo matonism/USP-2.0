@@ -310,6 +310,7 @@
 		function setRollerHeight(rollers){
 			var windowHeight = window.outerHeight;
 			var bgImg = [];
+			var rollerIndex = 0;
 
 			for(var i = 0; i < rollers.length; i++){
 				var targetRollerHeight = (windowHeight + 50) / 4;
@@ -317,7 +318,14 @@
 				var url = $(rollers[i]).css('background-image').replace('url(', '').replace(')', '').replace("'", '').replace('"', '');
 				bgImg.push($('<img />'));
 				bgImg[i].hide();
-				bgImg[i].bind('load', setHeightCallback($(bgImg[i]), rollers[i], targetRollerHeight));
+				bgImg[i].bind('load', function(){
+					var height = $(this).height();
+					var width = $(this).width();
+					$(rollers[rollerIndex]).css("background-size", targetRollerHeight * (width / height) + " " + targetRollerHeight);
+					$(rollers[rollerIndex]).css("height", targetRollerHeight);
+					rollerIndex++;
+					//setHeightCallback(bgImg[i], rollers[i], targetRollerHeight)
+				});
 				$(rollers[i]).append(bgImg[i]);
 				bgImg[i].attr('src', url);
 
