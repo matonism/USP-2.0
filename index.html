@@ -317,7 +317,7 @@
 				var url = $(rollers[i]).css('background-image').replace('url(', '').replace(')', '').replace("'", '').replace('"', '');
 				bgImg.push($('<img />'));
 				bgImg[i].hide();
-				bgImg[i].bind('load', function(){setHeightCallback(this, rollers[i], targetRollerHeight)});
+				bgImg[i].bind('load', setHeightCallback($(bgImg[i]), rollers[i], targetRollerHeight));
 				$(rollers[i]).append(bgImg[i]);
 				bgImg[i].attr('src', url);
 
