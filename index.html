@@ -328,12 +328,16 @@
 		}
 
 		function setVideoPlacement(){
-			var contentHeight = $(".main-about-content").css("height");
-			var windowHeight = window.outerHeight;
+			var contentHeight = $(".video").css("height");
+			var maincontentheight = $(".main-about-content").css("height");
+
+			var marginTopHeight = $(".fill-remaining-space").css("margin-top");
+			var windowHeight = window.innerHeight;
 
 			contentHeight = parseInt(contentHeight.replace('px'));
+			marginTopHeight = parseInt(marginTopHeight.replace('px'));
 
-			var distanceFromTop = (windowHeight/2) - (contentHeight/2);
+			var distanceFromTop = (windowHeight/2) - (contentHeight/2) - marginTopHeight/2;
 			$(".main-about-content").css("top", distanceFromTop);
 
 		}
