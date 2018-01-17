@@ -4,7 +4,8 @@ var helperFunctions = (function(helperFunctions){
 	helperFunctions.functions = {
 		invalidInputFields: invalidInputFields,
 		removeInputFieldErrors: removeInputFieldErrors,
-		setFormErrorFormatting: setFormErrorFormatting
+		setFormErrorFormatting: setFormErrorFormatting,
+		viewIsMobile: viewIsMobile
 
 	}
 
@@ -63,7 +64,13 @@ var helperFunctions = (function(helperFunctions){
 		return true;
 	}
 
-
+	function viewIsMobile(){
+		if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+     		return true;
+   		} else {
+     		return false;
+   		}
+	}
 
 })(helperFunctions || []);
 
