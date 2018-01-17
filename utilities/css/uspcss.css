@@ -135,6 +135,14 @@
 		width: 100%;
 		height: 100%;
 	}
+
+	.frosted-cover-black{
+		background-color: rgba(0,0,0,0.66);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		color: white;
+	}
 	.roller-strip-1{
 		background-image: url(../../images/image-roller1.jpg);
 	}
@@ -164,6 +172,7 @@
 
 	.video{
 		opacity: 0;
+		padding: 0;
 	}
 	.title-level-text{
 		height: 100%;
@@ -201,7 +210,18 @@
 		padding: 50px 20px;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 	}
+	.intro-text-title{
+		font-size: 28px;
+		font-family: 'LemonMilk', Verdana, Tahoma;
+		color: white;
 
+	}
+	.intro-text{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 20px;
+		padding-right: 50px;
+		padding-left: 50px;
+	}
 	.main-about-content{
 		position: absolute;
 		bottom: 15%;
