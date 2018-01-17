@@ -249,13 +249,6 @@
 	window.onload = function(){
 		
 		var isMobile = helperFunctions.functions.viewIsMobile();
-		
-		var setHeightCallback = function(image, roller, targetRollerHeight){
-			var height = $(image).height();
-			var width = $(image).width();
-			$(rollers).css("background-size", targetRollerHeight * (width / height) + " " + targetRollerHeight);
-			$(rollers).css("height", targetRollerHeight);
-		}
 
 		var showVideo = function(){
 			setTimeout(function(){
@@ -313,21 +306,21 @@
 			var rollerIndex = 0;
 
 			for(var i = 0; i < rollers.length; i++){
-				var targetRollerHeight = (windowHeight + 50) / 4;
-				
-				var url = $(rollers[i]).css('background-image').replace('url(', '').replace(')', '').replace("'", '').replace('"', '');
-				bgImg.push($('<img />'));
-				bgImg[i].hide();
-				bgImg[i].bind('load', function(){
-					var height = $(this).height();
-					var width = $(this).width();
-					$(rollers[rollerIndex]).css("background-size", targetRollerHeight * (width / height) + " " + targetRollerHeight);
-					$(rollers[rollerIndex]).css("height", targetRollerHeight);
-					rollerIndex++;
-					//setHeightCallback(bgImg[i], rollers[i], targetRollerHeight)
-				});
-				$(rollers[i]).append(bgImg[i]);
-				bgImg[i].attr('src', url);
+				var targetRollerHeight = (windowHeight + 50) / rollers.length;
+
+				var url = $(rollers[i]).css('background-image');
+				url = url.replace('url(', '');
+				url = url.replace(/\)/g, '');
+				url = url.replace(/\'/g, '');
+				url = url.replace(/\"/g, '');
+
+			    var image = new Image();
+			    image.src = url;
+
+			    var width = image.width;
+			    var height = image.height;
+				$(rollers[i]).css("background-size", targetRollerHeight * (width / height) + " " + targetRollerHeight);
+				$(rollers[i]).css("height", targetRollerHeight);
 
 			}
 

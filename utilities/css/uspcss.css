@@ -136,39 +136,30 @@
 		height: 100%;
 	}
 	.roller-strip-1{
-		background-repeat: repeat-x;
-		width: 200%;
-		height: 200px;
 		background-image: url(../../images/image-roller1.jpg);
 	}
 	.roller-strip-2{
-		background-repeat: repeat-x;
-		width: 200%;
-		height: 200px;
 		background-image: url(../../images/image-roller2.jpg);
 	}
 	.roller-strip-3{
-		background-repeat: repeat-x;
-		width: 200%;
-		height: 200px;
 		background-image: url(../../images/image-roller3.jpg);
 	}
 	.roller-strip-4{
-		background-repeat: repeat-x;
-		width: 200%;
-		height: 200px;
 		background-image: url(../../images/image-roller4.jpg);
 	}
 
 	.roller-strip{
 		opacity: 0;
+		background-repeat: repeat-x;
+		width: 200vw;
+		height: 200px;
 	}
 	.roll-left{
 
 	}
 
 	.roll-right{
-		margin-left: -100%;
+		margin-left: -100vw;
 	}
 
 	.video{
