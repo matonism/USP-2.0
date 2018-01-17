@@ -222,6 +222,20 @@
 		padding-right: 50px;
 		padding-left: 50px;
 	}
+
+	.watch-video-link{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 20px;
+		position: absolute;
+		bottom: 5;
+		right: 10;
+		cursor: pointer;
+	}
+
+	.watch-video-link:hover{
+		text-decoration: underline;
+	}
+
 	.main-about-content{
 		position: absolute;
 		bottom: 15%;
@@ -405,6 +419,12 @@
 		color: rgba(218, 87, 16, 1); /* burnt orange */ 	
 		font-size: 30px;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+	}
+
+	.bold-title-text{
+		color: rgba(218, 87, 16, 1); /* burnt orange */ 	
+		font-size: 30px;
+		font-family: 'LemonMilk', Verdana, Tahoma;
 	}
 
 	.follow-text{
