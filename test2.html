@@ -318,6 +318,19 @@
 			setVideoPlacement();
 			verticallyCenterIntroText();
 			showAllRollersInSuccession(rollers, 0);
+			
+			$( window ).resize(function() {
+				var rollers = $(".roller-strip");
+				setRollerHeight(rollers);
+				setVideoPlacement();
+				verticallyCenterIntroText();
+				clearRollerMargin();
+			});
+		}
+
+		function clearRollerMargin(){
+			$(".roller-strip.roll-right").css('margin-left', '0px');
+			$(".roller-strip.roll-left").css('margin-left', '-100px');
 
 		}
 
