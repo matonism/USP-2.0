@@ -5,7 +5,11 @@ var helperFunctions = (function(helperFunctions){
 		invalidInputFields: invalidInputFields,
 		removeInputFieldErrors: removeInputFieldErrors,
 		setFormErrorFormatting: setFormErrorFormatting,
-		viewIsMobile: viewIsMobile
+		viewIsMobile: viewIsMobile,
+		viewIsDesktop: viewIsDesktop,
+		verticallyCenterElements: verticallyCenterElements,
+		hideElementsForMobile: hideElementsForMobile,
+		hideElementsForDesktop: hideElementsForDesktop
 
 	}
 
@@ -70,6 +74,56 @@ var helperFunctions = (function(helperFunctions){
    		} else {
      		return false;
    		}
+	}
+
+	function viewIsDesktop(){
+		if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+     		return false;
+   		} else {
+     		return true;
+   		}
+	}
+
+	function verticallyCenterElements(){
+
+		var verticallyCenter = function(){
+			var verticalCenteredElements = $('.vertical-center');
+
+			if(verticalCenteredElements.length > 0){
+				window.addEventListener("resize", verticallyCenter);
+			}
+
+			for(var i = 0; i < verticalCenteredElements.length; i++){
+				var element = $(verticalCenteredElements[i]);
+				var parentElement = $(verticalCenteredElements[i].parentElement)
+				var parentHeight = parseFloat(parentElement.css("height"));
+				var elementHeight = parseFloat(element.css("height"));
+
+				paddingTop = parentHeight/2 - elementHeight/2;
+				// element.css("padding-top", paddingTop);
+				element.css("position", 'relative');
+				element.css("top", paddingTop);
+				
+			}
+		}
+
+		$(document).ready(verticallyCenter());
+	}
+
+	function hideElementsForMobile(){
+		$(document).ready(function(){
+			if(helperFunctions.functions.viewIsMobile()){
+				$(".hide-mobile").css("display", "none");
+			}
+		});
+	}
+
+	function hideElementsForDesktop(){
+		$(document).ready(function(){
+			if(helperFunctions.functions.viewIsDesktop()){
+				$(".hide-desktop").css("display", "none");
+			}
+		});
 	}
 
 })(helperFunctions || []);
