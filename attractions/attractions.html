@@ -24,34 +24,39 @@
 </head>
 <body>
 	<!-- ******************************** HEADER ********************************* -->
+	<div class="side-bar hide-mobile"> 
+		<div class="side-bar-nav-tab" onclick="slideSideBar();">
+			<div class="vertical-center right-arrow"></div>
+		</div>
+		<div class="side-bar-inner vertical-center">
+			
+			<a href="#location-link">
+				<div class="side-bar-nav-element">Location</div>
+			</a>
+			<a href="#drink-link">
+				<div class="side-bar-nav-element">Drink</div>
+			</a>
+			<a href="#food-link">
+				<div class="side-bar-nav-element">Food</div>
+			</a>
+			<a href="#games-link">
+				<div class="side-bar-nav-element">Games</div>
+			</a>
+			<a href="#nightlife-link">
+				<div class="side-bar-nav-element">Nightlife</div>
+			</a>
+			<a href="#parking-link">
+				<div class="side-bar-nav-element">Parking</div>
+			</a>
+		</div>
+	</div>
 
 	<div class="triangle hide-mobile"></div>
 	<div class="triangle-title-text hide-mobile">
 		Ultimate <br/>Summer <br/>Party
 	</div>
 
-		<div class="side-bar hide-mobile"> 
-			<div class="side-bar-inner">
-				<a href="#location-link">
-					<div class="side-bar-nav-element">Location</div>
-				</a>
-				<a href="#drink-link">
-					<div class="side-bar-nav-element">Drink</div>
-				</a>
-				<a href="#food-link">
-					<div class="side-bar-nav-element">Food</div>
-				</a>
-				<a href="#games-link">
-					<div class="side-bar-nav-element">Games</div>
-				</a>
-				<a href="#nightlife-link">
-					<div class="side-bar-nav-element">Nightlife</div>
-				</a>
-				<a href="#parking-link">
-					<div class="side-bar-nav-element">Parking</div>
-				</a>
-			</div>
-		</div>
+		
 	<div class="container-fluid">
 
 		<div class="row title-bar-row">
@@ -92,14 +97,10 @@
 		<!-- ******************************** MAIN CONTENT ********************************* -->
 
 		<a name="location-link"></a>
-		<div class="side-bar-nav-tab" style="position: fixed; width: 25px; height: 50px; top: 100px; left: 0px; background-color: gray; z-index: 2; text-align: center; font-size: 18px; border-radius: 0px 10px 10px 0px; " >
-		<div class="vertical-center" style="border-left: 5px solid white; border-top: 5px solid transparent; border-bottom: 5px solid transparent; left: 10;">
-			
-		</div>
-		</div>
+
 
 		</div>
-		<div style="">
+		<div class="main-content" style="padding-left: 25px;">
 
 			<div class="row">
 
@@ -239,7 +240,68 @@
 	helperFunctions.functions.verticallyCenterElements();
 	helperFunctions.functions.hideElementsForMobile();
 	helperFunctions.functions.hideElementsForDesktop();
+	var slideSideBar = function(){
+		
+		var sideBarOffset = parseFloat($('.side-bar').css("left"));
+		var currentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+		var currentRightMargin = parseFloat($('.main-content').css("margin-right"));
 
+		//if it should slide open
+		if(sideBarOffset < 0){
+			slideSideBarOpen();
+			// $('.side-bar').css("left", "0");
+			// $('.side-bar-nav-tab').css("left", "175");
+			// $('.main-content').css("padding-left", (currentLeftPadding + 175).toString());
+			// $('.main-content').css("margin-right", (currentRightMargin - 175).toString());
+		//if it should slide closed
+		}else{
+			slideSideBarClosed();
+			// $('.side-bar').css("left", "-175");
+			// $('.side-bar-nav-tab').css("left", "0");
+			// $('.main-content').css("padding-left", (currentLeftPadding - 175).toString());
+			// $('.main-content').css("margin-right", (currentRightMargin + 175).toString());
+		}
+	}
+
+	function slideSideBarOpen(){
+		
+		var interval = setInterval(function(){
+			var currentSideBarOffset = parseFloat($('.side-bar').css("left"));
+			if(currentSideBarOffset >= 0){
+				clearInterval(interval);
+			}else{
+				var incrementOnInterval = 5;
+				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
+				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+				$('.side-bar').css("left", (currentSideBarOffset + incrementOnInterval).toString());
+				$('.side-bar-nav-tab').css("left", (navTabOffset + incrementOnInterval).toString());
+				$('.main-content').css("padding-left", (mainContentLeftPadding + incrementOnInterval).toString());
+				$('.main-content').css("margin-right", (mainContentRightMargin - incrementOnInterval).toString());
+			}
+		}, 10);
+	}
+
+	function slideSideBarClosed(){
+		
+		var interval = setInterval(function(){
+			var currentSideBarOffset = parseFloat($('.side-bar').css("left"));
+			if(currentSideBarOffset <= -175){
+				clearInterval(interval);
+			}else{
+				var incrementOnInterval = 5;
+				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
+				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+				$('.side-bar').css("left", (currentSideBarOffset - incrementOnInterval).toString());
+				$('.side-bar-nav-tab').css("left", (navTabOffset - incrementOnInterval).toString());
+				$('.main-content').css("padding-left", (mainContentLeftPadding - incrementOnInterval).toString());
+				$('.main-content').css("margin-right", (mainContentRightMargin + incrementOnInterval).toString());
+			}
+		}, 10);
+	}
 
 </script>
 </body>

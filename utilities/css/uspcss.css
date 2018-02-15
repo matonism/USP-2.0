@@ -209,9 +209,10 @@
 	.side-bar{
 		height: 100vh; 
 		position: fixed; 
-		left: -200;
+		left: -175;
 		width: 200px; 
 		border-right: 1px solid gray;
+		background-color: gray;
 		z-index: 1;
 	}
 
@@ -233,6 +234,34 @@
 		margin-bottom: 10px;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 		border-radius: 10px 0px 0px 10px;
+	}
+
+	.side-bar-nav-tab{
+		position: fixed; 
+		width: 25px; 
+		height: 100%; 
+		left: 0px;
+		background-color: gray; 
+		z-index: 1; 
+		text-align: center; 
+		font-size: 18px; 
+	}
+	.side-bar-nav-tab:hover{
+		position: fixed; 
+		width: 25px; 
+		height: 100%; 
+		left: 0px;
+		background-color: #707070; 
+		z-index: 2; 
+		text-align: center; 
+		font-size: 18px; 
+	}
+
+	.right-arrow{
+		border-left: 5px solid white; 
+		border-top: 5px solid transparent; 
+		border-bottom: 5px solid transparent; 
+		left: 10;	
 	}
 	.title-level-text{
 		height: 100%;
@@ -507,6 +536,7 @@
 		border-top: 2px solid rgba(218, 87, 16, 1); 
 		color: white; 
 		width: 100vw;
+		z-index: 2;
 	}
 
 	.footer-top-border{
