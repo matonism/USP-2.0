@@ -1,1 +1,0 @@
-resizeFunctions.functions.initialActions();

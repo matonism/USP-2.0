@@ -15,243 +15,192 @@
 	<script src="../utilities/js/resizeFunctions.js"></script>
 	<script src="../utilities/js/ajaxCallHelper.js"></script>
 	<script src="../utilities/js/login.js"></script>
-	<script src="../utilities/js/countdownTimer.js"></script>
-	<script src="about.js"></script>
+	<script src="./about.js"></script>
 
 	<link rel="icon" 
 	type="image/png" 
 	href="../images/beachBall.png">
 	<title>Ultimate Summer Party</title>
 </head>
-
 <body>
+	<!-- ******************************** HEADER ********************************* -->
+	<div class="side-bar hide-mobile"> 
+		<div class="side-bar-nav-tab" onclick="slideSideBar();">
+			<div class="vertical-center right-arrow"></div>
+		</div>
+		<div class="side-bar-inner vertical-center">
+			
+			<a href="#location-link">
+				<div class="side-bar-nav-element">Location</div>
+			</a>
+			<a href="#drink-link">
+				<div class="side-bar-nav-element">Drink</div>
+			</a>
+			<a href="#food-link">
+				<div class="side-bar-nav-element">Food</div>
+			</a>
+			<a href="#games-link">
+				<div class="side-bar-nav-element">Games</div>
+			</a>
+			<a href="#nightlife-link">
+				<div class="side-bar-nav-element">Nightlife</div>
+			</a>
+			<a href="#parking-link">
+				<div class="side-bar-nav-element">Parking</div>
+			</a>
+		</div>
+	</div>
 
-
-	<div class="triangle"></div>
-	<div class="triangle-title-text">
+	<div class="triangle hide-mobile"></div>
+	<div class="triangle-title-text hide-mobile">
 		Ultimate <br/>Summer <br/>Party
 	</div>
 
+		
 	<div class="container-fluid">
 
 		<div class="row title-bar-row">
-			<div class="title-bar-over-image">
+			<div class="title-bar">
 				<div class="col-xs-12 col-md-12 quick-link-bar">
+
 					<div class="row">
-
-						<div class='login-button' id="login-button">
-
-							<div class="dropdown dropdown-style">
-								<a class="dropdown-toggle dropdown-login-toggle-style" href="#" data-toggle="dropdown">Log In <strong class="caret"></strong></a>
-								<div class="dropdown-menu dropdown-login-menu-style">
-
-
-									<form action="../utilities/php/login.php" id="loginForm" method="post" accept-charset="UTF-8">
-										<input type="username" class="form-control dropdown-username-style" id="login-username"name="login-username" aria-describedby="usernameHelp" placeholder="Username">
-										<input type="password" class="form-control dropdown-password-style" id="login-password" name="login-password" placeholder="Password">
-										<input class="btn btn-primary dropdown-login-button" type="submit" name="commit" value="Sign In" />
-										<a href="../createAccount">
-											Create an account
-										</a>
-									</form>
-
-
-								</div>
-							</div>
+						<div class="intro-text-title vertical-center hide-desktop" style="float: left; padding-left: 15px;">
+							Ultimate Summer Party
 						</div>
-
-						<div class='logout-button' id="logout-button">
-
-							<div class="dropdown dropdown-style">
-								<a class="dropdown-toggle dropdown-logout-toggle-style" href="#" data-toggle="dropdown">       
-									<div class="dropdown-logout-text">
-										Account <strong class="caret"></strong>
-									</div>
-								</a>
-
-
-								<div class="dropdown-menu dropdown-logout-menu-style">
-									<div id='username-display' class="dropdown-username-display">username</div>
-									<div class="centered-text">
-										<a class="dropdown-item logout-action" href="#">Log Out</a>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-
-						<a href="../teams">
+						<a href="../experience">
 							<div class='quick-link-button'>
-								Teams
+								Experience
 							</div>
 						</a>
 
-						<a href="../events">
-							<div class='quick-link-button'>
-								Events
-							</div>
-						</a>
-
-						<a href="../">
+						<a href="../about">
 							<div class='quick-link-button'>
 								About
 							</div>
 						</a>
 
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-		<div class="row">
-			
-			<div class="background-cover fill-remaining-space">
-				<div class='col-xs-12 main-about-content'>
-					
-					<div class="row">
-
-						<div class="col-xs-8 col-xs-offset-2">
-							<div class="content-description">
-								The Ultimate Summer Party is an all day celebration of summer and competition.  This is an event for heroes by heroes. Cowards are not welcome. Scroll to learn more...
+						<a href="../home">
+							<div class='quick-link-button'>
+								USP 2018
 							</div>
+						</a>
 
-							<br/>
-							<br/>
-							<br/>
-							<div class="down-arrow"></div>
-						</div>
+
 					</div>
-
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div id="countdown" class="col-xs-12 countdown-timer"></div>
-		</div>
-		<br/>
-		<br/>
-
-
-		<div class="row">
-			<div class="col-xs-offset-1 col-xs-10">
-
-				<span class="bold-text">What: </span>
-				<span class="follow-text">The Ultimate Summer Party&trade;</span>
-				<br/>
-
-				<span class="bold-text">When: </span>
-				<span class="follow-text">July 8th @ 1:00PM EST</span>
-				<br/>
-
-				<span class="bold-text">Where: </span>
-				<span class="follow-text">Richie's House</span>
-				<br/>
-
-				<span class="bold-text">Who: </span>
-				<span class="follow-text">At least 100 heroes</span>
-<!-- 				<br/>
-
-				<span class="bold-text">Schedule: </span>
-				<span class="follow-text">Coming Soon</span> -->
-
-			</div>
-		</div>
-		
-
-
-		<br/>
-		<br/>
-		<br/>
-
-		<div class="row">
-			<div class="col-xs-4">
-				<img src="../images/grill-circle.png" height="150px;" />
-				<br/>
-				<br/>
-				<div class="attraction-description">
-					There will be multiple open grills for a BYOM (bring your own meat) cookout
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<img src="../images/canoe-circle.png" height="150px;" />
-				<br/>
-				<br/>
-				<div class="attraction-description">
-					The venue includes a 300 foot private pond open for unlimited swimming, fishing, and canoeing 
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<img src="../images/bonfire-circle.png" height="150px;" />
-				<br/>
-				<br/>
-				<div class="attraction-description">
-					The event concludes with a bonfire-lit closing ceremony for those true heroes who conquer the day's events
 				</div>
 			</div>
 		</div>
 
+		<!-- ******************************** HEADER ********************************* -->
 
-		<div class="colored-background-section">
+
+		<!-- ******************************** MAIN CONTENT ********************************* -->
+
+		<a name="location-link"></a>
+
+
+		</div>
+		<div class="main-content" style="padding-left: 25px;">
 
 			<div class="row">
-				
-				<br/>
-				<div class="col-xs-offset-2 col-xs-8">
-					<div class="sideways-keg-photo">
-						<div class="photo-thumbnail-title keg-count-label">
-							Keg Count
+
+ 				<div class="col-xs-5" style="height: 28vw; padding: 0px; padding-right: 0px;">
+					<div class="location-image-2"></div>
+
+				</div>
+				<div class="col-xs-7" style="height: 28vw; padding: 0px;">
+					<div class="location-image-3">
+							<div class="location-text" style="height: 100%; width: 100%; font-size: 20px; padding: 0px; padding-top: 80px; ">
+							
 						</div>
-						<div class="photo-thumbnail-title keg-count-value">
-							3
-						</div> 
 					</div>
 				</div>
+
+			</div>
+			<div class="row">
+					<div class="location-image-1">
+						<div class="vertical-center">
+							About USP
+						</div>
+					</div>
 			</div>
 
-		</div>
-		<div class="row">
-			<div class=" col-xs-offset-2 col-xs-8" >				
-				<div class="donation-description">
-					We strongly encourage participants to bring their own drinks, but we hope to provide as well.  However paying for over 100 heroes is no small feat. So we decided to have as many kegs as the people want.  We've opened the <a target="_blank" href="https://venmo.com" style="font-weight: bold;">Ultimate Summer Party Venmo Account</a> <a target="_blank" href="https://venmo.com/Ultimate-Summer-Party">(@Ultimate-Summer-Party)</a> to fund this venture.  Donate as much as you want to drink and we'll handle the rest.
+			<div style="padding-left: 30px; padding-right: 30px;">
+				<br/>
+				<a name="drink-link"></a>
+
+				<div class="row" style="text-align: left; padding-left: 15px;">
+					<div class="bold-title-text">
+						Location
+					</div>
+					There will be more than enough room to house all the heroes attending Ultimate Summer Party&trade;.  The venue is a 2 acre plot of land in Boston Heights.  The land includes a 300 foot private pond open for unlimited swimming, fishing, and canoeing. All are welcome to make responsible use of the pond.  Bring your lawn chairs, picnic blankets, and anything you need to attack the day
+				</div>
+
+				<a name="food-link"></a>
+				<br/>
+
+				<div class="row" style="text-align: left; padding-left: 15px;">
+					<div class="bold-title-text">
+						Drink
+					</div>
+					Every year USP plans to provide as much booze as possible. However providing for a event of this size can be a huge task. Participants are more than welcome to bring their own drinks, but we also hope to provide kegs for the event. We decided to have as many kegs as the people want. We've opened the <a target="_blank" href="https://venmo.com/Ultimate-Summer-Party" style="font-weight: bold;">Ultimate Summer Party Venmo Account</a> <a target="_blank" href="https://venmo.com/Ultimate-Summer-Party">(@Ultimate-Summer-Party)</a> to fund this venture.  Donate as much as you want to drink and we'll handle the rest.  We will be keeping track of the amount we have raised in terms of kegs. USP2017&trade; brought us 3. Lets see what USP2018&trade; has in store
+				</div>
+				
+				<a name="games-link"></a>
+				<br/>
+
+				<div class="row" style="text-align: left; padding-left: 15px;">
+					<div class="bold-title-text">
+						Food
+					</div>
+					There is no worse idea than a full day and night of activity (and maybe a little alcohol) on an empty stomach.  We will have multiple open grills so that all participants can cook their own food. Bring meat, veggies or anything else that you want to eat and we'll have the rest covered
+				</div>
+
+				<a name="nightlife-link"></a>
+				<br/>
+				
+				<div class="row" style="text-align: left; padding-left: 15px;">
+					<div class="bold-title-text">
+						Games
+					</div>
+					Ultimate Summer Party&trade; was founded on 3 priniciple ideals.  Summer, booze, and competition.  The day will be filled with all kinds of dope activity. Our official list of games includes:
+					<ul>
+						<li>Garbage Can Pong</li>
+						<li>Beersbee</li>
+						<li>Can Jam</li>
+						<li>Slip n Slide Flip Cup</li>
+						<li>Dizzy Bat</li>
+					</ul>
+				</div>
+
+				<a name="parking-link"></a>
+				<br/>
+
+				<div class="row" style="text-align: left; padding-left: 15px;">
+					<div class="bold-title-text">
+						Nightlife
+					</div>
+					This is an all-day/all-night event. The closing ceremonies for Ultimate Summer Party&trade; will take place with all true competitors surrounding a powerful campfire.  Make sure to bring chairs and marshmallows. We strongly encourage any and all participants to stay the night if they feel uncomfortable driving home.  We will be camping out so make sure to bring tents, sleeping bags, and marshmallows for the night. 
+				</div>
+
+				<br/>
+				<div class="row" style="text-align: left; padding-left: 15px;">
+					<div class="bold-title-text">
+						Parking
+					</div>
+					For those concerned about parking, there will be plenty of room to park at the venue.  All are welcome to leave their cars parked overnight
 				</div>
 			</div>
 		</div>
 
+		<!-- ******************************** MAIN CONTENT ********************************* -->
 
 
 
+		<!-- ******************************** FOOTER ********************************* -->
 		<br/>
 		<br/>
 		<br/>
-		<br/>
-
-
-
-
-		<div class="row tent-section">
-			
-			<br/>
-			<div class="col-xs-2 col-xs-offset-2">
-				<div class="photo-thumbnail tent-photo" >
-				</div>
-			</div>
-			<div class="col-xs-6 tent-description-container">				
-				<div class="photo-thumbnail-description bold-text tent-description">
-					This is an all-day/all-night event. Guests are welcome to stay the night, but make sure to bring <span style="font-weight: bold; color: rgba(218, 87, 16, 1);">tents and sleeping gear</span> as it is also an all-outdoor event
-				</div>
-			</div>
-
-
-		</div>
-
-
 		<br/>
 		<br/>
 		<br/>
@@ -282,8 +231,72 @@
 				</div>
 			</div>
 		</div>
+		<!-- ******************************** FOOTER ********************************* -->
+
+
 	</div>
 
+<script type="text/javascript">
+	helperFunctions.functions.verticallyCenterElements();
+	helperFunctions.functions.hideElementsForMobile();
+	helperFunctions.functions.hideElementsForDesktop();
+	var slideSideBar = function(){
+		
+		var sideBarOffset = parseFloat($('.side-bar').css("left"));
+		var currentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+		var currentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+		//if it should slide open
+		if(sideBarOffset < 0){
+			slideSideBarOpen();
+		//if it should slide closed
+		}else{
+			slideSideBarClosed();
+		}
+	}
+
+	function slideSideBarOpen(){
+		
+		var interval = setInterval(function(){
+			var currentSideBarOffset = parseFloat($('.side-bar').css("left"));
+			if(currentSideBarOffset >= 0){
+				clearInterval(interval);
+			}else{
+				var incrementOnInterval = 5;
+				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
+				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+				$('.side-bar').css("left", (currentSideBarOffset + incrementOnInterval).toString());
+				$('.side-bar-nav-tab').css("left", (navTabOffset + incrementOnInterval).toString());
+				$('.main-content').css("padding-left", (mainContentLeftPadding + incrementOnInterval).toString());
+				$('.main-content').css("margin-right", (mainContentRightMargin - incrementOnInterval).toString());
+			}
+		}, 10);
+	}
+
+	function slideSideBarClosed(){
+		
+		var interval = setInterval(function(){
+			var currentSideBarWidth = parseFloat($('.side-bar').css("width"));
+			var currentSideBarOffset = parseFloat($('.side-bar').css("left"));
+			if(currentSideBarOffset <= -currentSideBarWidth){
+				clearInterval(interval);
+			}else{
+				var incrementOnInterval = 5;
+				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
+				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+				$('.side-bar').css("left", (currentSideBarOffset - incrementOnInterval).toString());
+				$('.side-bar-nav-tab').css("left", (navTabOffset - incrementOnInterval).toString());
+				$('.main-content').css("padding-left", (mainContentLeftPadding - incrementOnInterval).toString());
+				$('.main-content').css("margin-right", (mainContentRightMargin + incrementOnInterval).toString());
+			}
+		}, 10);
+	}
+
+</script>
 </body>
 
 </html>

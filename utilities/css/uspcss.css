@@ -45,6 +45,7 @@
 	    width: 100vw;
 	    float: right;
 	    position: fixed;
+	  	padding-right: 10px;
 
 	}
 
@@ -142,6 +143,7 @@
 		height: 100%;
 		width: 100%;
 		color: white;
+		z-index: 1;
 	}
 	.frosted-cover-black-non-absolute{
 		background-color: rgba(0,0,0,0.66);
@@ -209,11 +211,21 @@
 	.side-bar{
 		height: 100vh; 
 		position: fixed; 
-		left: -175;
-		width: 200px; 
-		border-right: 1px solid gray;
-		background-color: gray;
+		left: -150;
+		width: 150px; 
+		background-color: white;
 		z-index: 1;
+		background-color: #1A181B; /* burnt orange */  
+	}
+
+	.side-bar-large{
+		height: 100vh; 
+		position: fixed; 
+		left: -250;
+		width: 250px; 
+		background-color: white;
+		z-index: 1;
+		background-color: #1A181B; /* burnt orange */  
 	}
 
 	.side-bar-inner{
@@ -224,44 +236,38 @@
 
 	.side-bar-nav-element {
 		color: white;
-		font-style: bold;
 		padding: 5px;
 		padding-left: 10px;
 		width: 100%; 
 		height: 40px; 
-		background-color: black;
 		font-size: 18px;
 		margin-bottom: 10px;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 		border-radius: 10px 0px 0px 10px;
+		cursor: pointer;
 	}
 
 	.side-bar-nav-tab{
 		position: fixed; 
-		width: 25px; 
+		width: 10px; 
 		height: 100%; 
 		left: 0px;
-		background-color: gray; 
+		background-color: #564D65; 
 		z-index: 1; 
 		text-align: center; 
 		font-size: 18px; 
+		cursor: pointer;
+
 	}
 	.side-bar-nav-tab:hover{
-		position: fixed; 
-		width: 25px; 
-		height: 100%; 
-		left: 0px;
 		background-color: #707070; 
-		z-index: 2; 
-		text-align: center; 
-		font-size: 18px; 
 	}
 
 	.right-arrow{
 		border-left: 5px solid white; 
 		border-top: 5px solid transparent; 
 		border-bottom: 5px solid transparent; 
-		left: 10;	
+		left: 3;	
 	}
 	.title-level-text{
 		height: 100%;
@@ -324,6 +330,7 @@
 		bottom: 5;
 		right: 10;
 		cursor: pointer;
+		color: white;
 	}
 
 	.watch-video-link:hover{

@@ -1,3 +1,1 @@
-//resizeFunctions.functions.initialActions();
-//checkForLogin();
-countdownTimer.functions.startCountdownTimer();
+resizeFunctions.functions.initialActions();

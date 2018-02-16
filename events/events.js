@@ -1,2 +1,0 @@
-resizeFunctions.functions.initialActions();
-checkForLogin();
