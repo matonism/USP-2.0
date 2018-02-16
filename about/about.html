@@ -19,13 +19,13 @@
 
 	<link rel="icon" 
 	type="image/png" 
-	href="../images/beachBall.png">
+	href="../utilities/images/beachBall.png">
 	<title>Ultimate Summer Party</title>
 </head>
 <body>
 	<!-- ******************************** HEADER ********************************* -->
-	<div class="side-bar hide-mobile"> 
-		<div class="side-bar-nav-tab" onclick="slideSideBar();">
+	<div class="side-bar-thin hide-mobile"> 
+		<div class="side-bar-nav-tab" onclick="slideSideBar('.side-bar-thin');">
 			<div class="vertical-center right-arrow"></div>
 		</div>
 		<div class="side-bar-inner vertical-center">
@@ -100,7 +100,7 @@
 
 
 		</div>
-		<div class="main-content" style="padding-left: 25px;">
+		<div class="main-content">
 
 			<div class="row">
 
@@ -240,25 +240,25 @@
 	helperFunctions.functions.verticallyCenterElements();
 	helperFunctions.functions.hideElementsForMobile();
 	helperFunctions.functions.hideElementsForDesktop();
-	var slideSideBar = function(){
+	var slideSideBar = function(sideBarClass){
 		
-		var sideBarOffset = parseFloat($('.side-bar').css("left"));
+		var sideBarOffset = parseFloat($(sideBarClass).css("left"));
 		var currentLeftPadding = parseFloat($('.main-content').css("padding-left"));
 		var currentRightMargin = parseFloat($('.main-content').css("margin-right"));
 
 		//if it should slide open
 		if(sideBarOffset < 0){
-			slideSideBarOpen();
+			slideSideBarOpen(sideBarClass);
 		//if it should slide closed
 		}else{
-			slideSideBarClosed();
+			slideSideBarClosed(sideBarClass);
 		}
 	}
 
-	function slideSideBarOpen(){
+	function slideSideBarOpen(sideBarClass){
 		
 		var interval = setInterval(function(){
-			var currentSideBarOffset = parseFloat($('.side-bar').css("left"));
+			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
 			if(currentSideBarOffset >= 0){
 				clearInterval(interval);
 			}else{
@@ -267,7 +267,7 @@
 				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
 				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
 
-				$('.side-bar').css("left", (currentSideBarOffset + incrementOnInterval).toString());
+				$(sideBarClass).css("left", (currentSideBarOffset + incrementOnInterval).toString());
 				$('.side-bar-nav-tab').css("left", (navTabOffset + incrementOnInterval).toString());
 				$('.main-content').css("padding-left", (mainContentLeftPadding + incrementOnInterval).toString());
 				$('.main-content').css("margin-right", (mainContentRightMargin - incrementOnInterval).toString());
@@ -275,11 +275,11 @@
 		}, 10);
 	}
 
-	function slideSideBarClosed(){
+	function slideSideBarClosed(sideBarClass){
 		
 		var interval = setInterval(function(){
-			var currentSideBarWidth = parseFloat($('.side-bar').css("width"));
-			var currentSideBarOffset = parseFloat($('.side-bar').css("left"));
+			var currentSideBarWidth = parseFloat($(sideBarClass).css("width"));
+			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
 			if(currentSideBarOffset <= -currentSideBarWidth){
 				clearInterval(interval);
 			}else{
@@ -288,7 +288,7 @@
 				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
 				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
 
-				$('.side-bar').css("left", (currentSideBarOffset - incrementOnInterval).toString());
+				$(sideBarClass).css("left", (currentSideBarOffset - incrementOnInterval).toString());
 				$('.side-bar-nav-tab').css("left", (navTabOffset - incrementOnInterval).toString());
 				$('.main-content').css("padding-left", (mainContentLeftPadding - incrementOnInterval).toString());
 				$('.main-content').css("margin-right", (mainContentRightMargin + incrementOnInterval).toString());

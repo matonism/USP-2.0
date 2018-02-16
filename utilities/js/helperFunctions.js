@@ -69,19 +69,23 @@ var helperFunctions = (function(helperFunctions){
 	}
 
 	function viewIsMobile(){
-		if(window.innerWidth <= 800 && window.innerHeight <= 600) {
-     		return true;
-   		} else {
-     		return false;
-   		}
+	    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+
+		// if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+  //    		return true;
+  //  		} else {
+  //    		return false;
+  //  		}
 	}
 
 	function viewIsDesktop(){
-		if(window.innerWidth <= 800 && window.innerHeight <= 600) {
-     		return false;
-   		} else {
-     		return true;
-   		}
+    return !(typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+
+		// if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+  //    		return false;
+  //  		} else {
+  //    		return true;
+  //  		}
 	}
 
 	function verticallyCenterElements(){

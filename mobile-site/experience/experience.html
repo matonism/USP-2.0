@@ -1,0 +1,205 @@
+<html>
+
+<head>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+	<link rel="stylesheet" href="../utilities/css/uspcss.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
+	</script>
+	<script src="../utilities/js/helperFunctions.js"></script>	
+	<script src="../utilities/js/resizeFunctions.js"></script>
+	<script src="../utilities/js/ajaxCallHelper.js"></script>
+	<script src="../utilities/js/login.js"></script>
+	<script src="./experience.js"></script>
+
+	<link rel="icon" 
+	type="image/png" 
+	href="../utilities/images/beachBall.png">
+	<title>Ultimate Summer Party</title>
+</head>
+<body>
+	<!-- ******************************** HEADER ********************************* -->
+	<div class="side-bar-medium hide-mobile"> 
+		<div class="side-bar-nav-tab" onclick="slideSideBar('.side-bar-medium');">
+			<div class="vertical-center right-arrow"></div>
+		</div>
+		<div class="side-bar-inner vertical-center">
+			
+			<a href="#location-link">
+				<div class="side-bar-nav-element">USP 2017 Recap</div>
+			</a>
+			<a href="#drink-link">
+				<div class="side-bar-nav-element">Photo Gallery</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="triangle hide-mobile"></div>
+	<div class="triangle-title-text hide-mobile">
+		Ultimate <br/>Summer <br/>Party
+	</div>
+
+		
+	<div class="container-fluid">
+
+		<div class="row title-bar-row">
+			<div class="title-bar">
+				<div class="col-xs-12 col-md-12 quick-link-bar">
+
+					<div class="row">
+						<div class="intro-text-title vertical-center hide-desktop" style="float: left; padding-left: 15px;">
+							Ultimate Summer Party
+						</div>
+						<a href="../experience">
+							<div class='quick-link-button'>
+								Experience
+							</div>
+						</a>
+
+						<a href="../about">
+							<div class='quick-link-button'>
+								About
+							</div>
+						</a>
+
+						<a href="../home">
+							<div class='quick-link-button'>
+								USP 2018
+							</div>
+						</a>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ******************************** HEADER ********************************* -->
+
+
+		<!-- ******************************** MAIN CONTENT ********************************* -->
+
+
+		<div class="main-content main-content-experience">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i9Fo979Nysw?ecver=1" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ******************************** MAIN CONTENT ********************************* -->
+
+
+
+		<!-- ******************************** FOOTER ********************************* -->
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+
+
+		<div class="row">
+
+			<div class="footer">
+				<div class="footer-container">
+					<div class="row footer-top-border">
+					</div>
+					<div class="row footer-inner-container">
+						<div class="col-xs-12">
+							<div class="footer-header">
+								Ultimate Summer Party&trade; 2017
+							</div>
+							<div class="footer-content">
+								Rich Matonis | 216-633-2334 &#9679; Mike Matonis | 216-406-8704 <br/>
+								ultimatesummerpartyseries@gmail.com
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ******************************** FOOTER ********************************* -->
+
+
+	</div>
+
+<script type="text/javascript">
+	helperFunctions.functions.verticallyCenterElements();
+	helperFunctions.functions.hideElementsForMobile();
+	helperFunctions.functions.hideElementsForDesktop();
+	
+
+	var slideSideBar = function(sideBarClass){
+		
+		var sideBarOffset = parseFloat($(sideBarClass).css("left"));
+		var currentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+		var currentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+		//if it should slide open
+		if(sideBarOffset < 0){
+			slideSideBarOpen(sideBarClass);
+		//if it should slide closed
+		}else{
+			slideSideBarClosed(sideBarClass);
+		}
+	}
+
+	function slideSideBarOpen(sideBarClass){
+		
+		var interval = setInterval(function(){
+			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
+			if(currentSideBarOffset >= 0){
+				clearInterval(interval);
+			}else{
+				var incrementOnInterval = 5;
+				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
+				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+				$(sideBarClass).css("left", (currentSideBarOffset + incrementOnInterval).toString());
+				$('.side-bar-nav-tab').css("left", (navTabOffset + incrementOnInterval).toString());
+				$('.main-content').css("padding-left", (mainContentLeftPadding + incrementOnInterval).toString());
+				$('.main-content').css("margin-right", (mainContentRightMargin - incrementOnInterval).toString());
+			}
+		}, 10);
+	}
+
+	function slideSideBarClosed(sideBarClass){
+		
+		var interval = setInterval(function(){
+			var currentSideBarWidth = parseFloat($(sideBarClass).css("width"));
+			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
+			if(currentSideBarOffset <= -currentSideBarWidth){
+				clearInterval(interval);
+			}else{
+				var incrementOnInterval = 5;
+				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
+				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
+				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
+
+				$(sideBarClass).css("left", (currentSideBarOffset - incrementOnInterval).toString());
+				$('.side-bar-nav-tab').css("left", (navTabOffset - incrementOnInterval).toString());
+				$('.main-content').css("padding-left", (mainContentLeftPadding - incrementOnInterval).toString());
+				$('.main-content').css("margin-right", (mainContentRightMargin + incrementOnInterval).toString());
+			}
+		}, 10);
+	}
+</script>
+</body>
+
+</html>
