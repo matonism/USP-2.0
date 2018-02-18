@@ -5,17 +5,10 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 	<link rel="stylesheet" href="../utilities/css/uspcss.css">
+	<link rel="stylesheet" href="../utilities/css/sidePanel.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
 	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
-	</script>
-	<script src="../utilities/js/helperFunctions.js"></script>	
-	<script src="../utilities/js/resizeFunctions.js"></script>
-	<script src="../utilities/js/ajaxCallHelper.js"></script>
-	<script src="../utilities/js/login.js"></script>
-	<script src="./experience.js"></script>
+
 
 	<link rel="icon" 
 	type="image/png" 
@@ -24,8 +17,8 @@
 </head>
 <body>
 	<!-- ******************************** HEADER ********************************* -->
-	<div class="side-bar-medium hide-mobile"> 
-		<div class="side-bar-nav-tab" onclick="slideSideBar('.side-bar-medium');">
+	<div class="side-bar-left-medium hide-mobile"> 
+		<div class="side-bar-nav-tab-left">
 			<div class="vertical-center right-arrow"></div>
 		</div>
 		<div class="side-bar-inner vertical-center">
@@ -87,7 +80,7 @@
 
 		<div class="main-content main-content-experience">
 			<div class="row">
-				<div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8">
+				<div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-10">
 					<div class="embed-responsive embed-responsive-16by9">
 						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i9Fo979Nysw?ecver=1" frameborder="0" allowfullscreen></iframe>
 					</div>
@@ -137,69 +130,15 @@
 
 
 	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
+	</script>
+	<script src="../utilities/js/helperFunctions.js"></script>	
+	<script src="../utilities/js/resizeFunctions.js"></script>
+	<script src="../utilities/js/sidePanel.js"></script>	
+	<script src="./experience.js"></script>
 
-<script type="text/javascript">
-	helperFunctions.functions.verticallyCenterElements();
-	helperFunctions.functions.hideElementsForMobile();
-	helperFunctions.functions.hideElementsForDesktop();
-	
-
-	var slideSideBar = function(sideBarClass){
-		
-		var sideBarOffset = parseFloat($(sideBarClass).css("left"));
-		var currentLeftPadding = parseFloat($('.main-content').css("padding-left"));
-		var currentRightMargin = parseFloat($('.main-content').css("margin-right"));
-
-		//if it should slide open
-		if(sideBarOffset < 0){
-			slideSideBarOpen(sideBarClass);
-		//if it should slide closed
-		}else{
-			slideSideBarClosed(sideBarClass);
-		}
-	}
-
-	function slideSideBarOpen(sideBarClass){
-		
-		var interval = setInterval(function(){
-			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
-			if(currentSideBarOffset >= 0){
-				clearInterval(interval);
-			}else{
-				var incrementOnInterval = 5;
-				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
-				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
-				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
-
-				$(sideBarClass).css("left", (currentSideBarOffset + incrementOnInterval).toString());
-				$('.side-bar-nav-tab').css("left", (navTabOffset + incrementOnInterval).toString());
-				$('.main-content').css("padding-left", (mainContentLeftPadding + incrementOnInterval).toString());
-				$('.main-content').css("margin-right", (mainContentRightMargin - incrementOnInterval).toString());
-			}
-		}, 10);
-	}
-
-	function slideSideBarClosed(sideBarClass){
-		
-		var interval = setInterval(function(){
-			var currentSideBarWidth = parseFloat($(sideBarClass).css("width"));
-			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
-			if(currentSideBarOffset <= -currentSideBarWidth){
-				clearInterval(interval);
-			}else{
-				var incrementOnInterval = 5;
-				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
-				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
-				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
-
-				$(sideBarClass).css("left", (currentSideBarOffset - incrementOnInterval).toString());
-				$('.side-bar-nav-tab').css("left", (navTabOffset - incrementOnInterval).toString());
-				$('.main-content').css("padding-left", (mainContentLeftPadding - incrementOnInterval).toString());
-				$('.main-content').css("margin-right", (mainContentRightMargin + incrementOnInterval).toString());
-			}
-		}, 10);
-	}
-</script>
 </body>
 
 </html>

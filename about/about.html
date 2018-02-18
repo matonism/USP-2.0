@@ -5,17 +5,9 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 	<link rel="stylesheet" href="../utilities/css/uspcss.css">
+	<link rel="stylesheet" href="../utilities/css/sidePanel.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
 	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
-	</script>
-	<script src="../utilities/js/helperFunctions.js"></script>	
-	<script src="../utilities/js/resizeFunctions.js"></script>
-	<script src="../utilities/js/ajaxCallHelper.js"></script>
-	<script src="../utilities/js/login.js"></script>
-	<script src="./about.js"></script>
 
 	<link rel="icon" 
 	type="image/png" 
@@ -24,8 +16,8 @@
 </head>
 <body>
 	<!-- ******************************** HEADER ********************************* -->
-	<div class="side-bar-thin hide-mobile"> 
-		<div class="side-bar-nav-tab" onclick="slideSideBar('.side-bar-thin');">
+	<div class="side-bar-left-thin hide-mobile"> 
+		<div class="side-bar-nav-tab-left">
 			<div class="vertical-center right-arrow"></div>
 		</div>
 		<div class="side-bar-inner vertical-center">
@@ -104,11 +96,11 @@
 
 			<div class="row">
 
- 				<div class="col-xs-5" style="height: 28vw; padding: 0px; padding-right: 0px;">
+ 				<div class="col-xs-6" style="height: 28vw; padding: 0px; padding-right: 0px;">
 					<div class="location-image-2"></div>
 
 				</div>
-				<div class="col-xs-7" style="height: 28vw; padding: 0px;">
+				<div class="col-xs-6" style="height: 28vw; padding: 0px;">
 					<div class="location-image-3">
 							<div class="location-text" style="height: 100%; width: 100%; font-size: 20px; padding: 0px; padding-top: 80px; ">
 							
@@ -236,67 +228,17 @@
 
 	</div>
 
-<script type="text/javascript">
-	helperFunctions.functions.verticallyCenterElements();
-	helperFunctions.functions.hideElementsForMobile();
-	helperFunctions.functions.hideElementsForDesktop();
-	var slideSideBar = function(sideBarClass){
-		
-		var sideBarOffset = parseFloat($(sideBarClass).css("left"));
-		var currentLeftPadding = parseFloat($('.main-content').css("padding-left"));
-		var currentRightMargin = parseFloat($('.main-content').css("margin-right"));
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
+	</script>
+	<script src="../utilities/js/sidePanel.js"></script>	
+	<script src="../utilities/js/helperFunctions.js"></script>	
+	<script src="../utilities/js/resizeFunctions.js"></script>
+	<script src="../utilities/js/ajaxCallHelper.js"></script>
+	<script src="../utilities/js/login.js"></script>
+	<script src="./about.js"></script>
 
-		//if it should slide open
-		if(sideBarOffset < 0){
-			slideSideBarOpen(sideBarClass);
-		//if it should slide closed
-		}else{
-			slideSideBarClosed(sideBarClass);
-		}
-	}
-
-	function slideSideBarOpen(sideBarClass){
-		
-		var interval = setInterval(function(){
-			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
-			if(currentSideBarOffset >= 0){
-				clearInterval(interval);
-			}else{
-				var incrementOnInterval = 5;
-				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
-				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
-				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
-
-				$(sideBarClass).css("left", (currentSideBarOffset + incrementOnInterval).toString());
-				$('.side-bar-nav-tab').css("left", (navTabOffset + incrementOnInterval).toString());
-				$('.main-content').css("padding-left", (mainContentLeftPadding + incrementOnInterval).toString());
-				$('.main-content').css("margin-right", (mainContentRightMargin - incrementOnInterval).toString());
-			}
-		}, 10);
-	}
-
-	function slideSideBarClosed(sideBarClass){
-		
-		var interval = setInterval(function(){
-			var currentSideBarWidth = parseFloat($(sideBarClass).css("width"));
-			var currentSideBarOffset = parseFloat($(sideBarClass).css("left"));
-			if(currentSideBarOffset <= -currentSideBarWidth){
-				clearInterval(interval);
-			}else{
-				var incrementOnInterval = 5;
-				var navTabOffset = parseFloat($('.side-bar-nav-tab').css("left"));
-				var mainContentLeftPadding = parseFloat($('.main-content').css("padding-left"));
-				var mainContentRightMargin = parseFloat($('.main-content').css("margin-right"));
-
-				$(sideBarClass).css("left", (currentSideBarOffset - incrementOnInterval).toString());
-				$('.side-bar-nav-tab').css("left", (navTabOffset - incrementOnInterval).toString());
-				$('.main-content').css("padding-left", (mainContentLeftPadding - incrementOnInterval).toString());
-				$('.main-content').css("margin-right", (mainContentRightMargin + incrementOnInterval).toString());
-			}
-		}, 10);
-	}
-
-</script>
 </body>
 
 </html>

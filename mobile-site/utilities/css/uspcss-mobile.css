@@ -18,6 +18,22 @@
 
 	}
 
+	@media only screen and (max-device-width: 480px) {
+		html{
+			font-size: 16px;
+		}
+	}
+
+	@media only screen and (min-device-width: 480px) {
+		html{
+			font-size: 6px;
+		}
+	}
+
+
+	.clickable{
+		cursor: pointer;
+	}
 	.row{
 		text-align: center;
 	}
@@ -25,14 +41,20 @@
 	.centered-text{
 		text-align: center;
 	}
+	.left-aligned-text{
+		text-align: left;
+	}
 	.orange-text{
 		color: rgba(218, 87, 16, 1); /* burnt orange */  
+	}
+	.bold-text{
+		font-weight: bold;
 	}
 	.title-bar{
 	    background-color: rgba(200, 200, 200, 1); /* light gray */
 	    background-color: rgba(83, 202, 196, 1); /* light blue */ 
 	    background-color: rgba(0, 0, 0, 1); /* black */ 
-	    height: 20vh;
+	    height: 15vh;
 	    vertical-align: middle;
 	    z-index: 1;
 	    width: 100vw;
@@ -46,7 +68,7 @@
 	    background-color: rgba(200, 200, 200, 1); /* light gray */
 	    background-color: rgba(83, 202, 196, 1); /* light blue */ 
 	    background-color: rgba(0, 0, 0, 0.5); /* black */ 
-	    height: 20vh;
+	    height: 15vh;
 	    vertical-align: middle;
 	    z-index: 1;
 	    width: 100vw;
@@ -59,7 +81,7 @@
 	    background-color: rgba(83, 202, 196, 1); /* light blue */ 
 	    background-color: rgba(0, 0, 0, 0.5); /* black */ 
 	    background-color: rgba(0, 0, 0, 0.0); /* clear */ 
-	    height: 20vh;
+	    height: 15vh;
 	    vertical-align: middle;
 /*	    overflow: auto;
 	    overflow-y: hidden*/;
@@ -71,14 +93,14 @@
 	}
 
 	.title-bar-row{
-	    height: 20vh;
+	    height: 15vh;
 	}
 	.quick-link{
 		position: relative;
 		color: gray;
-	    height: 20vh;
+	    height: 15vh;
 		vertical-align: middle;
-		line-height: 20vh;
+		line-height: 15vh;
 		text-align: center;
 		padding: 0;
 		float: right;
@@ -87,9 +109,9 @@
 	.quick-link-clear{
 		position: relative;
 	    background-color: rgba(0, 0, 0, 0.0); /* black */ 
-	    height: 20vh;
+	    height: 15vh;
 		vertical-align: middle;
-		line-height: 20vh;
+		line-height: 15vh;
 		text-align: center;
 		padding: 0;
 		float: right;
@@ -97,15 +119,13 @@
 	}
 	.quick-link-button{
 		float: right;
-	    height: 20vh;
+	    height: 15vh;
 		color: white;
 		font-size: 40px;
-		line-height: 20vh;
+		line-height: 15vh;
 		width: 125px;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 		text-shadow: 1px 1px 10px black;
-
-
 	}
 	.quick-link-button-gray{
 		float: right;
@@ -120,9 +140,28 @@
 
 	}
 
+	.hamburger-nav-button{
+		float: right;
+	    height: 15vh;
+		color: white;
+		font-size: 8rem;
+		width: 100%;
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		text-shadow: 1px 1px 10px black;
+	}
+
+	.hamburger-nav{
+		text-align: center;
+	}
 	.frosted-cover{
 		background-color: rgb(255, 255, 255);
 		opacity: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.frosted-cover-m{
+		background-color: rgb(255, 255, 255);
+		opacity: .66;
 		width: 100%;
 		height: 100%;
 	}
@@ -154,6 +193,12 @@
 		background-image: url(../../utilities/images/image-roller4.jpg);
 	}
 
+	.roller-strip-m{
+		width: 100vw;
+		height: 200px;
+		background-repeat: repeat-x;
+	}
+
 	.roller-strip{
 		opacity: 0;
 		background-repeat: repeat-x;
@@ -177,90 +222,33 @@
 	.location-image-1{
 		width: 100%;
 		background-color: rgba(218, 87, 16, 1); /* burnt orange */  
-/*		background-color: black; 
+/*		background-color: #564D65; 
+*//*		background-color: black; 
 		background-color: white;   */
-		height: 8vw; 
-		font-size: 36px; 
+		height: 10vh; 
+		font-size: 5rem; 
 		color: white;
 		font-family: 'LemonMilk', Verdana, Tahoma;
 	}
 	.location-image-2{
-		height: 28vw; 
-		width: 100%;
+		height: 55vw; 
+		width: 100vw;
 		background-color: black;  
-		background-image: url('../../utilities/images/what-to-wear1.png'); 
+		background-image: url('../../utilities/images/what-to-wear1.jpg'); 
 		background-size: 100% 100%;
 	}
 	.location-image-3{
-		height: 28vw; 
+		height: 17vw; 
 		width: 100%;
-		background-image: url('../../utilities/images/matt-yell.png'); 
+		background-image: url('../../utilities/images/matt-yell.jpg'); 
 		background-size: 100% 100%; 
 	}
 
-	.side-bar-thin{
-		height: 100vh; 
-		position: fixed; 
-		left: -150;
-		width: 150px; 
-		background-color: white;
-		z-index: 1;
-		background-color: #1A181B; /* burnt orange */  
-	}
 
-	.side-bar-medium{
-		height: 100vh; 
-		position: fixed; 
-		left: -250;
-		width: 250px; 
-		background-color: white;
-		z-index: 1;
-		background-color: #1A181B; /* burnt orange */  
-	}
-
-	.side-bar-large{
-		height: 100vh; 
-		position: fixed; 
-		left: -350;
-		width: 350px; 
-		background-color: white;
-		z-index: 1;
-		background-color: #1A181B; /* burnt orange */  
-	}
-
-	.side-bar-inner{
-		padding: 20px; 
-		padding-top: 70px;
-	}
-
-
-	.side-bar-nav-element {
-		color: white;
-		padding: 5px;
-		padding-left: 10px;
-		width: 100%; 
-		height: 40px; 
-		font-size: 18px;
-		margin-bottom: 10px;
-		font-family: 'Champagne_Limousines', Verdana, Tahoma;
-		border-radius: 10px 0px 0px 10px;
-		cursor: pointer;
-	}
-
-	.side-bar-nav-tab{
-		position: fixed; 
-		width: 10px; 
-		height: 100%; 
-		left: 0px;
-		background-color: #564D65; 
-		z-index: 1; 
-		text-align: center; 
-		font-size: 18px; 
-		cursor: pointer;
-
-	}
-	.side-bar-nav-tab:hover{
-		background-color: #707070; 
+	.close-side-panel{
+		height: 15vh;
+		padding: 10px;
+		display: inline-block;
 	}
 
 	.right-arrow{
@@ -311,11 +299,26 @@
 		color: white;
 
 	}
+
+	.intro-text-title-m{
+		font-size: 6rem;
+		font-family: 'LemonMilk', Verdana, Tahoma;
+		color: black;
+		text-align: left;
+		line-height: 6rem;
+
+	}
 	.intro-text{
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 		font-size: 18px;
 		padding-right: 50px;
 		padding-left: 50px;
+
+	}
+	.intro-text-m{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 3rem;
+		text-align: left;
 
 	}
 	@media only screen and (max-width: 800px) {
@@ -346,6 +349,10 @@
 		padding-left: 30px; 
 		padding-top: 100px;
 		padding-right: 30px;
+	}
+
+	.main-content-experience-m{
+		padding-top: 5vh;
 	}
 	.background-cover{
 		background-image: url('../../utilities/images/summer-flop-compressed.jpg');
@@ -517,20 +524,25 @@
 		background-color: gray;
 	}
 
-	.attraction-description{
-		font-family: 'Champagne_Limousines', Verdana, Tahoma;
-		font-size: 16px;
+	.attraction-image-m{
+		width: 25vw; 
+		height: 25vw;
 	}
 
-	.bold-text{
+	.description-m{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 3rem;
+	}
+
+	.bold-text-formatted{
 		color: rgba(218, 87, 16, 1); /* burnt orange */ 	
-		font-size: 30px;
+		font-size: 3rem;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 	}
 
 	.bold-title-text{
 		color: rgba(218, 87, 16, 1); /* burnt orange */ 	
-		font-size: 30px;
+		font-size: 5rem;
 		font-family: 'LemonMilk', Verdana, Tahoma;
 	}
 
@@ -539,6 +551,18 @@
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 	}
 	
+	.padded-full-screen-text{
+		padding-left: 3rem; 
+		padding-right: 2rem;
+	}
+
+	.clear-padding{
+		padding: 0;
+	}
+	.footer-buffer{
+		width: 100vw;
+		height: 15vh;
+	}
 
 	.footer{
 /*		margin-left: -15px;
@@ -555,7 +579,7 @@
 	.footer-top-border{
 		margin-right: 0; 
 		margin-left: 0; 
-		height: 10px; 
+		height: 2vh; 
 		background-color: rgba(218, 87, 16, 1);
 	}
 
@@ -567,24 +591,25 @@
 	.footer-inner-container{
 		margin-right: 0; 
 		margin-left: 0; 
-		height: 80px; 
-		margin-top: 10px;
+		height: 10vh; 
+		margin-top: 2vh;
 	}
 
 	.footer-header{
-		font-size: 20px; 
+		font-size: 2rem; 
 		font-family: 'LemonMilk', Verdana, Tahoma; 
 		overflow: hidden;
 	}
 
 	.footer-content{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma; 
 		overflow: hidden;
+		font-size: 1.8rem;
 	}
 
 	.banner-title-text{
-		font-size: 50px;
+		font-size: 8vh;
 		font-family: 'LemonMilk', Verdana, Tahoma; 
-		padding-left: 15px;
 		color: white;
 		text-shadow: 1px 1px 10px black;
 
@@ -675,10 +700,16 @@
 		background-size: 150px 150px;
 	}
 
+	.tent-image{
+		width: 30vw; 
+		height: 30vw; 
+		margin-right: 5vw;
+	}
+
 	.sideways-keg-photo{
-		height: 300px; 
+		height: 66vw; 
 		background-image: url('../../utilities/images/sideways-keg-icon.png'); 
-		background-size: 361px 300px; 
+		background-size: 80vw 66.67vw; 
 		background-position: center; 
 		background-repeat: no-repeat;
 	}
@@ -695,29 +726,29 @@
 
 	.keg-count-label{
 		color: white;
-		padding-left: 70px; 
-		padding-top: 90px; 
-		font-size: 30px; 
+		padding-left: 8rem;
+		font-size: 5rem; 
 		text-align: center; 
-/*		text-shadow: 1px 1px 10px black; 
-*/		font-family: "LemonMilk", Verdana, Tahoma;
+		font-family: "LemonMilk", Verdana, Tahoma;
 	}
 
 	.keg-count-value{
 		color: white;
-		padding-left: 70px; 
-		margin-top: -10px; 
-		font-size: 60px; 
+		padding-left: 8rem;
+		margin-top: -0.2rem; 
+		font-size: 10rem; 
 		text-align: center; 
 		font-weight: bold;
-/*		text-shadow: 1px 1px 10px black; 
-*/		font-family: "LemonMilk", Verdana, Tahoma;
+		font-family: "LemonMilk", Verdana, Tahoma;
 	}
 
 	.donation-description{
-		font-size: 20px; 
+		font-size: 24px; 
 		color: black;
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+
 	}
+
 
 	.tent-section{
 		border-top: 2px solid rgba(218, 87, 16, 1);  
@@ -734,6 +765,9 @@
 		position: absolute; 
 		top: auto; 
 		padding-top: 20px;
+	}
+	.tent-description-m{
+		font-size: 2.5rem; 
 	}
 
 	.dropdown-backdrop{
@@ -809,13 +843,24 @@
 	.countdown-timer{
 		padding-top: 10px;
 		color: rgba(218, 87, 16, 1);
-		font-size: 30px;
+		font-size: 3rem;
 		font-family: "Champagne_Limousines", Verdana, Tahoma;
 		text-align: center;
 		width: 100%;
 		background-color: rgba(0, 0, 0, 0.8);
+		background-color: #564D65; 
+
 		padding-bottom: 10px;
 
+
+	}
+	.date-banner{
+		height: 8vh;
+		width: 100%;
+		background-color: #564D65; 
+		font-family: "LemonMilk", Verdana, Tahoma;
+		font-size: 3rem;
+		color: white;
 
 	}
 
@@ -890,5 +935,4 @@
 	.team-actions-cancel{
 		margin-top: -15px;
 	}
-	
 	

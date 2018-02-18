@@ -105,7 +105,11 @@ var helperFunctions = (function(helperFunctions){
 
 				paddingTop = parentHeight/2 - elementHeight/2;
 				// element.css("padding-top", paddingTop);
-				element.css("position", 'relative');
+				var positioning = element.css("position");
+				if(positioning != 'absolute' && positioning != 'fixed'){
+					element.css("position", 'relative');
+				}
+
 				element.css("top", paddingTop);
 				
 			}
