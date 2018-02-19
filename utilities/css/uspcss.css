@@ -19,6 +19,9 @@
 
 	}
 
+	.clickable{
+		cursor: pointer;
+	}
 	.row{
 		text-align: center;
 	}
@@ -26,7 +29,23 @@
 	.centered-text{
 		text-align: center;
 	}
-
+	.left-aligned-text{
+		text-align: left;
+	}
+	.orange-text{
+		color: rgba(218, 87, 16, 1); /* burnt orange */  
+	}
+	.bold-text{
+		font-weight: bold;
+	}
+	
+	.padded-full-screen-text{
+		padding-left: 45px; 
+		padding-right: 30px;
+	}
+	.clear-padding{
+		padding: 0;
+	}
 	.title-bar{
 	    background-color: rgba(200, 200, 200, 1); /* light gray */
 	    background-color: rgba(83, 202, 196, 1); /* light blue */ 
@@ -159,6 +178,7 @@
 	}
 
 	.roller-strip{
+		margin-bottom: 8px;
 		opacity: 0;
 		background-repeat: repeat-x;
 		width: 200vw;
@@ -176,7 +196,10 @@
 		opacity: 0;
 		padding: 0;
 	}
-
+	.usp-video-gif{
+		width: 100%; 
+		top: 150;
+	}
 
 	.location-image-1{
 		width: 100%;
@@ -462,7 +485,7 @@
 		font-size: 16px;
 	}
 
-	.bold-text{
+	.striking-orange-text{
 		color: rgba(218, 87, 16, 1); /* burnt orange */ 	
 		font-size: 30px;
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
