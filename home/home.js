@@ -105,7 +105,7 @@ var init = function(){
 		contentHeight = parseInt(contentHeight.replace('px'));
 		marginTopHeight = parseInt(marginTopHeight.replace('px'));
 
-		var distanceFromTop = (windowHeight/2) - (contentHeight/2) - (marginTopHeight*3/4);
+		var distanceFromTop = (windowHeight/2) - (contentHeight/1.75) - (marginTopHeight*3/4);
 		$(".main-about-content").css("top", distanceFromTop);
 
 	}

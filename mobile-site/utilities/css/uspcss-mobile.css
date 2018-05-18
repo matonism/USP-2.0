@@ -935,4 +935,52 @@
 	.team-actions-cancel{
 		margin-top: -15px;
 	}
+
+	.tshirt-color-item{
+		display: block;
+	}
+	.color-box{
+		display: inline-block; 
+		height: 5rem; 
+		width: 5rem; 
+		border-radius: 4px; 
+	}
+
+	.color-box-maroon{
+		background-color: rgb(146, 34, 56);
+	}
+	.color-box-red{
+		background-color: rgb(210, 10, 40);
+	}
+	.color-box-orange{
+		background-color: rgb(220, 88, 42);
+	}
+	.color-box-yellow{
+		background-color: rgb(240, 169, 61);
+	}
+	.color-box-green{
+		background-color: rgb(134, 182, 96);
+	}
+	.color-box-blue{
+		background-color: rgb(3, 135, 184);
+	}
+	.color-box-purple{
+		background-color: rgb(79, 35, 122);
+	}
+	.color-box-navy{
+		background-color: rgb(25, 28, 53);
+	}
+	.color-box-black{
+		background-color: rgb(0, 0, 0);
+	}
+	.color-box-gray{
+		background-color: rgb(170, 172, 184);
+	}
 	
+	.tank-image{
+		width: 90%;
+	}
+
+	.content-offset{
+		padding-left: 20px;
+	}
