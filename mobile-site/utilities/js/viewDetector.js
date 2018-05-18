@@ -13,12 +13,28 @@ var viewDetector = (function(viewDetector){
 	function navigateToAppropriateView(){
 		if(viewIsMobile() && !location.host.includes('m.ultimatesummerparty')){
 			var fullURL = location.href;
-			fullURL = fullURL.replace('ultimatesummerparty', 'm.ultimatesummerparty');
-   			location.replace(fullURL);
+			if(fullURL.includes('/about/#usp-tank-link')){
+			    fullURL = fullURL.replace('/about/#usp-tank-link', '/tshirtInfo').replace('ultimatesummerparty', 'm.ultimatesummerparty');
+			    if(fullURL.charAt(fullURL.length-1) == '/'){
+			        fullURL = fullURL.substring(0, fullURL.length - 1);
+			    }
+			    location.href = fullURL;
+			}else{
+	    		fullURL = fullURL.replace('ultimatesummerparty', 'm.ultimatesummerparty');
+      			location.replace(fullURL);
+			}
    		}else if(viewIsDesktop() && location.host.includes('m.ultimatesummerparty')){
 			var fullURL = location.href;
-			fullURL = fullURL.replace('m.ultimatesummerparty', 'ultimatesummerparty');
-   			location.replace(fullURL);   		
+			if(fullURL.includes('/tshirtInfo')){
+			    fullURL = fullURL.replace('/tshirtInfo', '/about#usp-tank-link').replace('m.ultimatesummerparty', 'ultimatesummerparty');
+			    if(fullURL.charAt(fullURL.length-1) == '/'){
+			        fullURL = fullURL.substring(0, fullURL.length - 1);
+			    }
+			    location.href = fullURL;
+			}else{
+			    fullURL = fullURL.replace('m.ultimatesummerparty', 'ultimatesummerparty');
+    		    location.replace(fullURL);   
+			}
    		}
 	}
 
