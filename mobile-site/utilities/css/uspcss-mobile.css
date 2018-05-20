@@ -990,8 +990,7 @@
 	}
 
 	.color-select-box.selected{
-/*		border-radius: 0 5vw 0 0;
-*/		border: 1rem solid white;
+		border: 1rem solid white;
 	}
 
 	.tank-image{
