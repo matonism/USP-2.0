@@ -977,6 +977,23 @@
 		background-color: rgb(170, 172, 184);
 	}
 	
+	.color-select-grid{
+		display: grid; 
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  
+		grid-template-rows: 18vw 18vw;
+	}
+
+	.color-select-box{
+		align-self: center;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	.color-select-box.selected{
+/*		border-radius: 0 5vw 0 0;
+*/		border: 1rem solid white;
+	}
+
 	.tank-image{
 		width: 90%;
 	}

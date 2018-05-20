@@ -95,8 +95,32 @@
 
 				<div class="row">
 					<div>
-						<img class="tank-image" src="../utilities/images/usp2018-tank.jpg"/>
+						<img id='tank-image' class="tank-image" src="../utilities/images/usp-tank-maroon.jpg"/>
 					</div>
+				</div>
+				<br/>
+				<div class="color-select-grid">
+					<div class="color-select-box color-box-maroon selected">
+					</div>
+					<div class="color-select-box color-box-red">
+					</div>
+					<div class="color-select-box color-box-orange">
+					</div>
+					<div class="color-select-box color-box-yellow">
+					</div>
+					<div class="color-select-box color-box-green">
+					</div>
+					<div class="color-select-box color-box-blue">
+					</div>
+					<div class="color-select-box color-box-purple">
+					</div>
+					<div class="color-select-box color-box-navy">
+					</div>
+					<div class="color-select-box color-box-black">
+					</div>
+					<div class="color-select-box color-box-gray">
+					</div>
+
 				</div>
 
 				<br/>
@@ -197,7 +221,33 @@
 	</div>
 		<!-- ******************************** FOOTER ********************************* -->
 
+	<script>
+		$('.color-select-box').on('click', function(){
+			var classString = this.className;
+			classes = classString.split(' ');
+			for(var i = 0; i < classes.length; i++){
+				if(classes[i].includes('color-box-')){
+					var color = classes[i].split('-')[2];
 
+					$('.color-select-box').each(function(){
+						var classString = this.className;
+						if(classString.includes(color)){
+							classString += ' selected';
+						}else{
+							classString = classString.replace(' selected', '', true)
+						}
+						this.className = classString;
+					});
+					
+					var image = document.getElementById('tank-image');
+					image.src = '../utilities/images/usp-tank-' + color + '.jpg';
+				}
+			}
+		});
+
+
+
+	</script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
 	</script>
