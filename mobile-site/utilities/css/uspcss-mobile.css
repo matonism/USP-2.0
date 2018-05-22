@@ -1000,3 +1000,22 @@
 	.content-offset{
 		padding-left: 20px;
 	}
+
+	
+	.order-now-button{
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 1rem 1.5rem;
+		color: white;
+		border-radius: 5px;
+		font-family: "LemonMilk", Verdana, Tahoma;
+		background-color: rgba(218, 87, 16, 1); /* burnt orange */
+		font-size: 3rem;  
+		cursor: pointer;
+
+	}
+
+	.inline-card{
+		background-color: rgba(86, 77, 101, 0.09);
+		padding: 2.5rem;
+	}

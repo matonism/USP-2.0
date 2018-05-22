@@ -277,6 +277,12 @@
 		color: white;
 
 	}
+	.intro-text-sub-title{
+		font-size: 20px;
+		font-family: 'LemonMilk', Verdana, Tahoma;
+		color: black;
+
+	}
 	.intro-text{
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 		font-size: 18px;
@@ -938,3 +944,20 @@
 		padding-left: 20px;
 	}
 	
+	.order-now-button{
+		display: inline-block;
+		margin-top: 20px;
+		padding: 5px 10px;
+		color: white;
+		border-radius: 5px;
+		font-family: "LemonMilk", Verdana, Tahoma;
+		background-color: rgba(218, 87, 16, 1); /* burnt orange */
+		font-size: 2rem;  
+		cursor: pointer;
+
+	}
+
+	.inline-card{
+		background-color: rgba(86, 77, 101, 0.09);
+		padding: 2.5rem;
+	}
