@@ -46,14 +46,17 @@ var init = function(){
 		$(".video").css("opacity", '1');
 		$(".frosted-cover").css("opacity", '.66');
 	}else{
-		rollerScroll(frostImages, showVideo);
+		$(window).bind("load", function() {
 
-		var rollers = $(".roller-strip");
-		setRollerHeight(rollers);
-		setVideoPlacement();
-		verticallyCenterIntroText();
-		showAllRollersInSuccession(rollers, 0);
-		
+			rollerScroll(frostImages, showVideo);
+
+			var rollers = $(".roller-strip");
+			setRollerHeight(rollers);
+			setVideoPlacement();
+			verticallyCenterIntroText();
+			showAllRollersInSuccession(rollers, 0);
+		});
+
 		$( window ).resize(function() {
 			var rollers = $(".roller-strip");
 			setRollerHeight(rollers);
