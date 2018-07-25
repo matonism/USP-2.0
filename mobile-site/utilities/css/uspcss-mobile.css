@@ -1020,3 +1020,36 @@
 		padding: 2.5rem;
 		margin: 3rem 0rem;
 	}
+
+
+
+	.thumbnail-grid{
+	}
+
+	.video-thumbnail-container{
+		width: 40%;
+		padding-right: 1rem;
+	}
+
+	.video-thumbnail{
+		width: 100%;
+	}
+
+	.promo-video-container{
+/*		margin-bottom: 5rem;
+*/	}
+
+	.video-title{
+		font-family: "LemonMilk", Verdana, Tahoma;
+		font-size: 2.5rem;
+	}
+
+	.video-info{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 2rem;
+	}
+
+	.thumbnail-card{
+		display:flex;
+		margin-bottom: 1rem;
+	}

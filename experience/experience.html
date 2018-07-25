@@ -77,13 +77,49 @@
 
 
 		<div class="main-content main-content-experience">
-			<div class="row">
+			<div class="row promo-video-container">
 				<div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-10">
 					<div class="embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i9Fo979Nysw?ecver=1" frameborder="0" allowfullscreen></iframe>
+						<iframe id="USPvideo" class="embed-responsive-item" src="https://www.youtube.com/embed/i9Fo979Nysw?ecver=1" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
+
+<!-- https://www.youtube.com/watch?v=cuwwuzLI_xE
+ -->
+
+
+ 			<hr/>
+
+			<div class="thumbnail-grid">
+
+				<div onclick="showVideo('cuwwuzLI_xE');">
+					<div class="video-thumbnail-container">
+						<img class="video-thumbnail" src="https://img.youtube.com/vi/cuwwuzLI_xE/0.jpg"/>
+					</div>
+					<div class="video-title">
+						USP 2018
+					</div>
+					<div class="video-info">
+						Recap video of Ultimate Summer Party 2018
+					</div>
+				</div>
+
+				<div onclick="showVideo('i9Fo979Nysw');">
+					<div class="video-thumbnail-container">
+						<img class="video-thumbnail" src="https://img.youtube.com/vi/i9Fo979Nysw/0.jpg"/>
+					</div>
+					<div class="video-title">
+						USP 2017
+					</div>
+					<div class="video-info">
+						Recap video of Ultimate Summer Party 2017
+					</div>
+				</div>
+
+			</div>
+
+
 		</div>
 
 		<!-- ******************************** MAIN CONTENT ********************************* -->
@@ -99,6 +135,7 @@
 		<br/>
 		<br/>
 		<br/>
+
 
 
 		<div class="row">
@@ -125,7 +162,30 @@
 			</div>
 		</div>
 		<!-- ******************************** FOOTER ********************************* -->
+	<script>
 
+		function loadVideo(){
+			var url = new URL(document.location.href);
+			var video = !!url.searchParams.get("v") ? url.searchParams.get("v") : 'cuwwuzLI_xE';
+			var uspVideo = $('#USPvideo')[0];
+			uspVideo.src = 'https://www.youtube.com/embed/' + video + '?ecver=1';
+
+			$('.video-thumbnail').each(function(){
+				if(this.src.includes(video)){
+					this.style.opacity = '1';
+				}
+
+			});
+
+		}
+
+		function showVideo(videoId){
+			window.location.href = window.location.pathname + '?v=' + videoId;
+		}
+
+		document.onload = loadVideo();
+
+	</script>
 
 	</div>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">

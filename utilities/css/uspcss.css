@@ -299,7 +299,7 @@
 		font-family: 'Champagne_Limousines', Verdana, Tahoma;
 		font-size: 20px;
 		position: absolute;
-		bottom: 55;
+		bottom: 10;
 		right: 10;
 		cursor: pointer;
 		color: white;
@@ -961,3 +961,39 @@
 		background-color: rgba(86, 77, 101, 0.09);
 		padding: 2.5rem;
 	}
+
+	.thumbnail-grid{
+		display: grid; 
+		grid-gap: 3rem; 
+		grid-template-columns: repeat(auto-fill, 25%);
+	}
+
+	.video-thumbnail-container{
+		width: 100%;
+		padding-right: 1rem;
+	}
+
+	.video-thumbnail{
+		width: 100%;
+		opacity: 0.5;
+	}
+
+	.video-thumbnail:hover{
+		opacity: 1;
+		cursor: pointer;
+	}
+
+	.promo-video-container{
+/*		margin-bottom: 5rem;
+*/	}
+
+	.video-title{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 2rem;
+	}
+
+	.video-info{
+		font-family: 'Champagne_Limousines', Verdana, Tahoma;
+		font-size: 1.25rem;
+	}
+
