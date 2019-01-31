@@ -861,6 +861,9 @@
 		font-family: "LemonMilk", Verdana, Tahoma;
 		font-size: 3rem;
 		color: white;
+		display:flex;
+		align-items: center; 
+		justify-content: space-between;
 
 	}
 
@@ -1052,4 +1055,12 @@
 	.thumbnail-card{
 		display:flex;
 		margin-bottom: 1rem;
+	}
+
+	.social-icon-container{
+		width: 15%;
+	}
+
+	.social-icon{
+		height:60%;
 	}
