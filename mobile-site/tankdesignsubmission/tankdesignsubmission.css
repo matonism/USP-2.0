@@ -1,0 +1,65 @@
+body {
+	margin: 0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: "Coolvetica";
+    src: url(../utilities/fonts/coolvetica.ttf) format("truetype");
+}
+@font-face {
+    font-family: "LemonMilk";
+    src: url(../utilities/fonts/LemonMilk.otf) format("truetype");
+}
+@font-face {
+    font-family: "ChampagneLimousines";
+    src: url(../utilities/fonts/Champagne_Limousines.ttf) format("truetype");
+}
+
+.padded-full-screen-text{
+	padding: 0 2rem;
+}
+.sub-header-images{
+	display: flex;
+}
+.tank-design-image-1{
+	height: 28vw; 
+	background-color: black;  
+	background-image: url('../utilities/images/tank-stock-photo1.jpg'); 
+	background-size: 100% 100%;
+	flex-grow: 1;
+}
+.tank-design-image-2{
+	height: 35vw; 
+	background-color: black;  
+	background-image: url('../utilities/images/tank-stock-photo2.jpg'); 
+	background-size: 100% 100%;
+	flex-grow: 1.5;
+}
+.tank-design-image-3{
+	height: 35vw; 
+	background-color: black;  
+	background-image: url('../utilities/images/tank-stock-photo3.jpg'); 
+	background-size: 100% 100%;
+	flex-grow: 1;
+}
+
+.page-subtitle-band{
+	width: 100%;
+	background-color: rgba(218, 87, 16, 1); /* burnt orange */  
+	height: 6vw; 
+	font-size: 36px; 
+	color: white;
+	font-family: 'LemonMilk', Verdana, Tahoma;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.page-wrapper {
+	min-height: 100vh;
+	position: relative;
+}

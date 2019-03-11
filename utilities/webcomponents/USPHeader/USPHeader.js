@@ -8,8 +8,12 @@ class USPHeader extends HTMLElement {
 	}
 
 	connectedCallback() {
-		var shadowRoot = this.attachShadow({mode: 'open'});
-		var wc = new WebComponentLoader(this, "USPHeader/USPHeader");
+		if(this.getAttribute(mobile)){
+			var wc = new WebComponentLoader(this, "USPHeader/USPHeader-mobile");
+		}else{
+			var wc = new WebComponentLoader(this, "USPHeader/USPHeader");
+		}
+			var shadowRoot = this.attachShadow({mode: 'open'});
 
 	}
 
