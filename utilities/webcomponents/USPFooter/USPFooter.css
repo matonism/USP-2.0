@@ -1,0 +1,43 @@
+
+	.footer-space{
+		height: 146px;
+	}
+	.footer{
+		position: absolute;
+		bottom: 0px;
+		background-color: black;
+		border-top: 2px solid rgba(218, 87, 16, 1); 
+		color: white; 
+		width: 100vw;
+		z-index: 2;
+		text-align: center;
+	}
+
+	.footer-top-border{
+		margin-right: 0; 
+		margin-left: 0; 
+		height: 10px; 
+		background-color: rgba(218, 87, 16, 1);
+	}
+
+	.footer-container{
+		margin: auto 0px; 
+		width: 100vw;
+	}
+
+	.footer-inner-container{
+		margin-right: 0; 
+		margin-left: 0; 
+		height: 80px; 
+		margin-top: 10px;
+	}
+
+	.footer-header{
+		font-size: 20px; 
+		font-family: 'LemonMilk', Verdana, Tahoma; 
+		overflow: hidden;
+	}
+
+	.footer-content{
+		overflow: hidden;
+	}
