@@ -32,14 +32,14 @@ class USPSidePanel extends HTMLElement {
 		var side = 'left';
 		var size = '30vw';
 		if(this.hasAttribute('size')){
-			var size = this.getAttribute('size');
+			size = this.getAttribute('size');
 			if(size == 'small' || size == 'medium' || size == 'large'){
-				size = this.sizeMapping[size];
+				size = this.sizeMapping()[size];
 			}
 		}
 
 		if(size.includes('vw')){
-			var size = document.documentElement.clientWidth * parseFloat(size) / 100
+			size = document.documentElement.clientWidth * parseFloat(size) / 100
 		}
 
 
@@ -71,10 +71,12 @@ class USPSidePanel extends HTMLElement {
 
 	}
 
-	sizeMapping = {
-		small: '30vw',
-		medium: '60vw',
-		large: '90vw'
+	sizeMapping(){
+	    return {
+    		small: '30vw',
+    		medium: '60vw',
+    		large: '90vw'
+	    }
 	}
 
 	slideSidePanel(component){
@@ -84,7 +86,7 @@ class USPSidePanel extends HTMLElement {
 			var sidePanel = component.shadowRoot.getElementById("side-panel");
 
 			if(side == 'left'){
-				var sideBarOffset = parseFloat(sidePanel.style.left);
+				let sideBarOffset = parseFloat(sidePanel.style.left);
 
 				//if it should slide open
 				if(sideBarOffset < 0){
@@ -94,7 +96,7 @@ class USPSidePanel extends HTMLElement {
 					component.slideSideBarClosedFromLeft(sidePanel, sidePanelNavTab);
 				}
 			}else{
-				var sideBarOffset = parseFloat(sidePanel.style.right);
+				let sideBarOffset = parseFloat(sidePanel.style.right);
 
 				//if it should slide open
 				if(sideBarOffset < 0){
